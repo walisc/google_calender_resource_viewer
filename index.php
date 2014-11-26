@@ -16,10 +16,14 @@ if (empty($app_config['CLIENT_ID']) == true || empty($app_config['CLIENT_SECRET'
 }
 else
 {
-	$calender_client = get_calender_client($app_config['CLIENT_ID'], $app_config['CLIENT_SECRET'], $app_config['REDIRECT_URI']);
+    session_start();
+    $calender_client = get_calender_client($app_config['CLIENT_ID'], $app_config['CLIENT_SECRET'], $app_config['REDIRECT_URI']);
     $calender_data = calender_processor::process($calender_client);
+   
+    $_SESSION['CALENDER_DATA'] = $calender_data;
+    
+    include 'chart_drawer.html';
 
-    print_r($calender_data);
 }
 
 

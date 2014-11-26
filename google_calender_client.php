@@ -18,6 +18,8 @@ function get_calender_client($client_id, $client_secret, $redirect_url)
 	$auth_code = isset($_GET["code"]) ? $_GET["code"] : '';
 	$initialized = false;
 	
+	
+	
 	if (empty($auth_code) == true)
 	{
 		$authUrl = $client->createAuthUrl();
@@ -34,9 +36,10 @@ function get_calender_client($client_id, $client_secret, $redirect_url)
 		// Exchange authorization code for access token
 		$accessToken = $client->authenticate($auth_code);
 		$client->setAccessToken($accessToken);
+		
+		
 
 	}
-
 	return $initialized ? $service : null;
 }
 ?>

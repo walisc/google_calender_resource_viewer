@@ -14,7 +14,6 @@ class calender_processor
     public static function process($calender_service)
     {
         $calendarList = $calender_service->calendarList->listCalendarList();
-
         $calender_objs = array();
 
         foreach($calendarList as $calender_item)
