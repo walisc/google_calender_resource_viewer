@@ -1,5 +1,5 @@
 <?php
-/*Chido Warambwa*/
+/*CW*/
 /*21 Nov 2014 21:20*/
 /*Main base class to obatin deployment keys from config and intialize the app*/
 
